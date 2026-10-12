@@ -1,7 +1,16 @@
-Hash table:
+Hash table: Unordered maps/hash tables would require more space than other implementations due to their needed pointers and helper functions.
+However, they are relatively quick (on average) to run and, depending on the hash funciton, can access elements in constant time.
+They do require maintainance however as bins need to be resized when full. 
 
-Map:
+Map: Compared to unordered maps, maps use quite a bit less space however take longer to access items stored within as they are more consistant.
+Maps are also easier to maintain as elements are meant to be sorted to reduce hash collisions in the future. 
 
-Sparse mapping 1:
 
-Sparse mapping 2:
+Given that K is fixed at compile time and N can change during runtime: 
+Sparse mapping 1: [N][K]: This implementation will likely take more space as each vector that grows in size inherently adds more arrays,
+whether they were all needed or not. Since the vectors are nested here, additional allocated memory makes maintainance more difficult.
+However the speed of access is negligible compared to the sparse mapping 2 implementation as array and vector indexing is relatively the same. 
+
+Sparse mapping 2: [K][N]: This implementation will likely take less space in memory as the arrays are fixed in size, while the inner vectors can change during runtime,
+however this won't change the other vectors in the array when one changes. Maintanance would be easier as less memory would have to be reallocated or moved when
+one vector was increased in size, and accessing time would be relatively the same as sparse mapping 1 due to the same reason listed previously. 

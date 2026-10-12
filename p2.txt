@@ -1,4 +1,4 @@
-2a. 
-2b. 
-2c. 
-2d. 
+2a. args1, args2, ..., argsN
+2b. (f(args1) + 1), (f(args2) + 1), ..., (f(argsN) + 1)
+2c. tuple{args1, args2, ..., argsN}
+2d. tuple{std::vector<Args>1, std::vector<Args>2, ..., std::vector<Args>N}
